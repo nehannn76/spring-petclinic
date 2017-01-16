@@ -121,9 +121,21 @@
   </dependencies>
 
   <build>
+      
+  <plugin>
+              <groupId>pl.project13.maven</groupId>
+              <artifactId>git-commit-id-plugin</artifactId>
+              <version>2.1.15</version>
+              <configuration>
+                <failOnNoGitDirectory>false</failOnNoGitDirectory>
+              </configuration>
+            </plugin>    
+      
+      
+      
+      
     <plugins>
-
-            <plugin>
+        <plugin>
               <groupId>org.apache.tomcat.maven</groupId>
               <artifactId>tomcat7-maven-plugin</artifactId>
               <version>2.2</version>
@@ -169,7 +181,7 @@
 
       <!-- Spring Boot Actuator displays build-related information if a git.properties 
         file is present at the classpath -->
-     <plugin>
+    <!--  <plugin>
         <groupId>pl.project13.maven</groupId>
         <artifactId>git-commit-id-plugin</artifactId>
         <executions>
@@ -187,7 +199,7 @@
           </generateGitPropertiesFilename>
         </configuration>
       </plugin>
-           
+         -->  
       <plugin>
         <groupId>ro.isdc.wro4j</groupId>
         <artifactId>wro4j-maven-plugin</artifactId>
