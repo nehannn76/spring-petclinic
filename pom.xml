@@ -118,6 +118,16 @@
       <artifactId>spring-boot-devtools</artifactId>
       <scope>runtime</scope>
     </dependency>
+      
+      
+      <dependency>
+    <groupId>pl.project13.maven</groupId>
+    <artifactId>git-commit-id-plugin</artifactId>
+    <version>2.1.15</version>
+   </dependency>
+      
+      
+      
   </dependencies>
 
   <build>
@@ -169,7 +179,7 @@
 
       <!-- Spring Boot Actuator displays build-related information if a git.properties 
         file is present at the classpath -->
-     <plugin>
+   <!--  <plugin>
         <groupId>pl.project13.maven</groupId>
         <artifactId>git-commit-id-plugin</artifactId>
         <executions>
@@ -186,7 +196,30 @@
           <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties
           </generateGitPropertiesFilename>
         </configuration>
-      </plugin> 
+      </plugin> -->
+        
+        
+        
+        <plugin>
+            <groupId>pl.project13.maven</groupId>
+            <artifactId>git-commit-id-plugin</artifactId>
+            <version>2.1.15</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>revision</goal>
+                     </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <dotGitDirectory>${project.basedir}/../.git</dotGitDirectory>
+                <!-- more config here as you see fit -->
+            </configuration>
+        </plugin>
+        
+        
+        
+        
       <plugin>
         <groupId>ro.isdc.wro4j</groupId>
         <artifactId>wro4j-maven-plugin</artifactId>
